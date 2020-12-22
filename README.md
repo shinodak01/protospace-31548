@@ -35,6 +35,11 @@ Things you may want to cover:
 | occupation  | text   | null: false |
 | position    | text   | null: false |
 
+### Association
+
+- has_many :prototypes
+- has_many :comments
+
 
 ## prototype テーブル
 
@@ -44,6 +49,12 @@ Things you may want to cover:
 | catch_copy  | text       | null: false                    |
 | user        | references | null: false, foreign_key: true |
 
+### Association
+
+- belongs_to :user
+- has_many :comments
+- has_one_attached :image
+
 
 ## comments テーブル
 
@@ -52,3 +63,8 @@ Things you may want to cover:
 | text             | string     | null: false                    |
 | user             | references | null: false, foreign_key: true |
 | prototype        | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :prototype
